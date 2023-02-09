@@ -8,7 +8,6 @@ page = Nokogiri::HTML(URI.open(url))
 scrap_title = page.css('.single-headline')[0]
 
 scrap_date = page.css('.topnewstext, b')[0].text.split[2..].join(' ').gsub(/[ ]/ ,"-").gsub(/[,]/ ,"")
-DateTime.parse(scrap_date).to_date.to_s
 
 scrap_location = page.css('topnewstext, b')[0].text.split[0].gsub(/[,]/ ,"")
 
